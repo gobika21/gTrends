@@ -1,51 +1,27 @@
 import { Avatar, Badge, Container, Table, Group, Text, ActionIcon, Anchor, rem } from '@mantine/core';
 import { IconPencil, IconTrash } from '@tabler/icons-react';
 
-const data = [
-    {
-        avatar:
-            'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png',
-        name: 'Robert Wolfkisser',
-        job: 'Engineer',
-        email: 'rob_wolf@gmail.com',
-        phone: '+44 (452) 886 09 12',
-    },
-    {
-        avatar:
-            'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
-        name: 'Jill Jailbreaker',
-        job: 'Engineer',
-        email: 'jj@breaker.com',
-        phone: '+44 (934) 777 12 76',
-    },
-];
-
-const jobColors = {
-    engineer: 'blue',
-    manager: 'cyan',
-    designer: 'pink',
-};
+const data = JSON.parse(localStorage.getItem('cartItem'));
 
 function ViewCart() {
     const rows = data.map((item) => (
-        <Table.Tr key={item.name}>
-            <Table.Td>
+        <Table.Tr key={item.id}>
+             <Table.Td>
                 <Group gap="sm">
                     <Avatar size={30} src={item.avatar} radius={30} />
+                </Group>
+            </Table.Td>
+            <Table.Td>
+                <Group gap="sm">
                     <Text fz="sm" fw={500}>
-                        {item.name}
+                        {item.title}
                     </Text>
                 </Group>
             </Table.Td>
 
             <Table.Td>
-                <Badge color={jobColors[item.job.toLowerCase()]} variant="light">
-                    {item.job}
-                </Badge>
-            </Table.Td>
-            <Table.Td>
                 <Anchor component="button" size="sm">
-                    {item.email}
+                    1
                 </Anchor>
             </Table.Td>
             <Table.Td>
@@ -56,9 +32,9 @@ function ViewCart() {
                     <ActionIcon variant="subtle" color="gray">
                         <IconPencil style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
                     </ActionIcon>
-                    <ActionIcon variant="subtle" color="red">
+                    {/* <ActionIcon variant="subtle" color="red" onClick={() => localStorage.removeItem('cartItem',item.id)}>
                         <IconTrash style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
-                    </ActionIcon>
+                    </ActionIcon> */}
                 </Group>
             </Table.Td>
         </Table.Tr>
@@ -72,10 +48,9 @@ function ViewCart() {
                     <Table verticalSpacing="sm">
                         <Table.Thead>
                             <Table.Tr>
-                                <Table.Th>Employee</Table.Th>
-                                <Table.Th>Job title</Table.Th>
-                                <Table.Th>Email</Table.Th>
-                                <Table.Th>Phone</Table.Th>
+                                <Table.Th>Product</Table.Th>
+                                <Table.Th>Product Name</Table.Th>
+                                <Table.Th>Quantity</Table.Th>
                                 <Table.Th />
                             </Table.Tr>
                         </Table.Thead>

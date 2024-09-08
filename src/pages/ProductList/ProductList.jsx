@@ -10,7 +10,11 @@ function ProductList() {
     const params = useParams();
     const { id } = params;
     
-    const addToCart = (product) => console.log(product);
+    const addToCart = (product) => {
+        const arr = JSON.parse(localStorage.getItem('cartItem')) || [];
+        arr.push(product);
+        localStorage.setItem('cartItem', JSON.stringify(arr));
+    }
 
     useEffect(() => {
         if (id) {
@@ -52,7 +56,7 @@ function ProductList() {
                     </List>
 
                     <Group mt={30}>
-                        <Button variant="default" radius="xl" size="md" className={classes.control} onClick={addToCart(product)}>
+                        <Button variant="default" radius="xl" size="md" className={classes.control} onClick={() => addToCart(product)}>
                             Add to Cart
                         </Button>
                     </Group>
