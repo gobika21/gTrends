@@ -1,0 +1,116 @@
+/* .productList {
+    max-width: 20em;
+    max-height: 31em;
+}
+
+.price {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  }
+  
+  .carousel {
+    @mixin hover {
+      .carouselControls {
+        opacity: 1;
+      }
+    }
+  }
+  
+  .carouselControls {
+    transition: opacity 150ms ease;
+    opacity: 0;
+  }
+  
+  .carouselIndicator {
+    width: rem(4px);
+    height: rem(4px);
+    transition: width 250ms ease;
+  
+    &[data-active] {
+      width: rem(16px);
+    }
+  } */
+
+  /* .card {
+    background-color: var(--mantine-color-body);
+  }
+  
+  .imageSection {
+    padding: var(--mantine-spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  }
+  
+  .label {
+    margin-bottom: var(--mantine-spacing-xs);
+    line-height: 1;
+    font-weight: 700;
+    font-size: var(--mantine-font-size-xs);
+    letter-spacing: rem(-0.25px);
+    text-transform: uppercase;
+  }
+  
+  .section {
+    padding: var(--mantine-spacing-md);
+    border-top: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  }
+  
+  .icon {
+    margin-right: rem(5px);
+    color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-2));
+  } */
+
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: calc(var(--mantine-spacing-xl) * 4);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+  }
+  
+  .content {
+    max-width: rem(480px);
+    margin-left: calc(var(--mantine-spacing-xl) * 3);
+  
+    @media (max-width: 48em) {
+      max-width: 100%;
+      margin-left: 1em;
+    }
+  }
+  
+  .title {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
+    font-size: rem(44px);
+    line-height: 1.2;
+    font-weight: 900;
+  
+    @media (max-width: 30em) {
+      font-size: rem(28px);
+    }
+  }
+  
+  .control {
+    @media (max-width: 30em) {
+      flex: 1;
+    }
+  }
+  
+  .image {
+    width: rem(376px);
+    height: rem(356px);
+  
+    @media (max-width: 48em) {
+      display: none;
+    }
+  }
+  
+  .highlight {
+    position: relative;
+    background-color: var(--mantine-color-blue-light);
+    border-radius: var(--mantine-radius-sm);
+    padding: rem(4px) rem(12px);
+  }

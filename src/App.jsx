@@ -1,32 +1,28 @@
 // import Home from "./Modules/Home/Home";
 // import Product from "./Modules/Product/Product";
 // import Footer from "./assets/Components/Footer/Footer";
-import Footer from "./Footer/Footer";
-import Headers from "./Headers/Headers";
-import Home from "./Home/Home";
-import Product from "./Products/Products";
-// import { Routes, Route } from "react-router-dom";
-// import Products from "./Modules/ProductSec/ProductSec";
-// import CategoryProducts from "./Modules/CategoryProducts/CategoryProducts";
-// import Cart from "../src/Cart/Cart";
-// import About from "./assets/Components/About/About";
-// import Checkout from "./assets/Components/Checkout/Checkout";
+import Footer from "./pages/Footer/Footer";
+import Headers from "./pages/Headers/Headers";
+import Home from "./pages/Home/Home";
+// import Products from "./pages/Products/Products";
+import { Routes, Route } from "react-router-dom";
+// import AppRouter from "./routes/routes";
+import About from "./pages/About/About";
+import ProductList from "./pages/ProductList/ProductList";
+import ViewCart from "./pages/ViewCart/ViewCart";
 
 function App() {
   return (
     <>
       <Headers />
-      <Home />
-      <Product />
-      {/* <Routes> */}
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/products/:id" element={<Product />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/categories/:name" element={<CategoryProducts />} />
-        <Route path="cart" element={<Cart />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/checkout" element={<Checkout />} /> */}
-      {/* </Routes> */}
+        <Route path="/products/:id" element={<ProductList />} />
+        <Route path="/cart" element={<ViewCart />} />
+        {/* <Route path="/products" element={<ProductList />} /> */}
+      </Routes>
       <Footer />
     </>
   );
